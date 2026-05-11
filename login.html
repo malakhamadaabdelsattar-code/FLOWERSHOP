@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Flower Shop</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 <div class="flower-rain">
@@ -17,30 +16,54 @@
   <span class="f">🌸</span>
   <span class="f">🌹</span>
 </div>
-<nav>
 
-  <h2>Flower Shop 🌹 
-</h2>
-    <ul>
+<nav>
+  <h2>Flower Shop 🌹</h2>
+  <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="shop.html">Shop</a></li>
-   	<li><a href="login.html">Login</a></li>
+<li><a href="login.html">Login</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button onclick="toggleMode()">🌙</button>
 </nav>
 
+</nav>
 
-<section class="hero">
-  <h1>Fresh Flowers Delivered</h1>
-  <a href="shop.html"><button>Shop Now</button></a>
+
+<section class="login-section">
+
+<div class="login-box">
+
+<div class="robot">
+
+<div class="eyes">
+<div class="eye"><div class="pupil"></div></div>
+<div class="eye"><div class="pupil"></div></div>
+</div>
+
+</div>
+
+<h1>Login</h1>
+
+<form>
+
+ <input type="text" id="username" placeholder="Username" required> 
+    
+    <input type="password" id="password" placeholder="Password" required> 
+
+    <button type="button" onclick="validateLogin()">Login</button>
+    
+    <p id="errorBox" style="color: red; font-size: 14px;"></p>
+</form>
+
+</div>
+
 </section>
 <footer>
 <p>Malak's Flower shop</p>
 </footer>
 <script src="script.js"></script>
-
-</div>
 </body>
 </html>
