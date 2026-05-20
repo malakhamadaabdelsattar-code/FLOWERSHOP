@@ -18,23 +18,51 @@
   <span class="f">🌹</span>
 </div>
 <nav>
+  <button id="menuToggle" onclick="openMenu()">☰</button>
+  <h2>Flower Shop 🌹</h2>
+  <div class="nav-actions">
+    <button id="cartBtn" onclick="openCart()">🛒 <span id="cartBadge"></span></button>
+    <button onclick="toggleMode()">🌙</button>
+  </div>
+</nav>
 
-  <h2>Flower Shop 🌹 
-</h2>
-    <ul>
+<!-- Side Menu -->
+<div id="sideMenu">
+  <button id="closeMenu" onclick="closeMenu()">✕</button>
+  <div class="side-logo">🌹 Flower Shop</div>
+  <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="shop.html">Shop</a></li>
-   	<li><a href="login.html">Login</a></li>
+    <li><a href="login.html">Login</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button onclick="toggleMode()">🌙</button>
-</nav>
+</div>
 
+<!-- Overlay -->
+<div id="menuOverlay" onclick="closeMenu(); closeCart();"></div>
+
+<!-- Cart Modal -->
+<div id="cartModal">
+  <button id="closeCart" onclick="closeCart()">✕</button>
+  <h2>🛒 Your Cart</h2>
+  <div id="cartItems"></div>
+  <div id="cartTotal">Total: $0</div>
+  <button id="checkoutBtn" onclick="checkout()">Checkout ✨</button>
+</div>
+
+<!-- Toast -->
+<div id="cartToast"></div>
 
 <section class="hero">
-  <h1>Fresh Flowers Delivered</h1>
-  <a href="shop.html"><button>Shop Now</button></a>
+  <div class="hero-slide active" style="background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('images/rose.jpg') center/cover;"></div>
+  <div class="hero-slide" style="background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('images/tulip.jpg') center/cover;"></div>
+  <div class="hero-slide" style="background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('images/mix.jpg') center/cover;"></div>
+  <div class="hero-content">
+    <h1>Fresh Flowers Delivered 🌸</h1>
+    <p style="font-size:18px;margin-bottom:25px;text-shadow:1px 1px 4px rgba(0,0,0,0.3);">Handpicked with love, delivered to your door</p>
+    <a href="shop.html"><button style="font-size:18px;padding:14px 35px;">Shop Now 🌹</button></a>
+  </div>
 </section>
 <footer>
 <p>Malak's Flower shop</p>

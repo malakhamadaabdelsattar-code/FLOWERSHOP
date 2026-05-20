@@ -18,7 +18,18 @@
 </div>
 
 <nav>
+  <button id="menuToggle" onclick="openMenu()">☰</button>
   <h2>Flower Shop 🌹</h2>
+  <div class="nav-actions">
+    <button id="cartBtn" onclick="openCart()">🛒 <span id="cartBadge"></span></button>
+    <button onclick="toggleMode()">🌙</button>
+  </div>
+</nav>
+
+<!-- Side Menu -->
+<div id="sideMenu">
+  <button id="closeMenu" onclick="closeMenu()">✕</button>
+  <div class="side-logo">🌹 Flower Shop</div>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="shop.html">Shop</a></li>
@@ -26,13 +37,36 @@
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button onclick="toggleMode()">🌙</button>
-</nav>
+</div>
+
+<!-- Overlay -->
+<div id="menuOverlay" onclick="closeMenu(); closeCart();"></div>
+
+<!-- Cart Modal -->
+<div id="cartModal">
+  <button id="closeCart" onclick="closeCart()">✕</button>
+  <h2>🛒 Your Cart</h2>
+  <div id="cartItems"></div>
+  <div id="cartTotal">Total: $0</div>
+  <button id="checkoutBtn" onclick="checkout()">Checkout ✨</button>
+</div>
+
+<!-- Toast -->
+<div id="cartToast"></div>
+
 <section class="content-box">
     <h1>Contact Us</h1>
     <p>📍 Location: AAST-MT, Alexandria</p>
     <p>📞 Phone: +20 123 456 789</p>
     <p>📧 Email: support@flowershop.com</p>
+    <div class="contact-form">
+        <input type="text" id="cName" placeholder="Your Name" required>
+        <input type="email" id="cEmail" placeholder="Your Email" required>
+        <textarea id="cMsg" placeholder="Your Message..."></textarea>
+        <p id="contactError" class="error-msg"></p>
+        <p id="contactSuccess" class="success-msg"></p>
+        <button onclick="validateContact()">Send Message 💌</button>
+    </div>
 </section>
 </section> 
 
