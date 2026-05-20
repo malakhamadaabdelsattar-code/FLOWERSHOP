@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register - Flower Shop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="flower-rain">
+  <span class="f">🌸</span><span class="f">🌹</span><span class="f">🌷</span>
+  <span class="f">🌸</span><span class="f">🌹</span><span class="f">🌷</span>
+  <span class="f">🌸</span><span class="f">🌹</span>
+</div>
+
+<nav>
+  <button id="menuToggle" onclick="openMenu()">☰</button>
+  <h2>Flower Shop 🌹</h2>
+  <div class="nav-actions">
+    <button id="cartBtn" onclick="openCart()">🛒 <span id="cartBadge"></span></button>
+    <button onclick="toggleMode()">🌙</button>
+  </div>
+</nav>
+
+<!-- Side Menu -->
+<div id="sideMenu">
+  <button id="closeMenu" onclick="closeMenu()">✕</button>
+  <div class="side-logo">🌹 Flower Shop</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="product.html">Products</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<!-- Overlay -->
+<div id="menuOverlay" onclick="closeMenu(); closeCart();"></div>
+
+<!-- Cart Modal -->
+<div id="cartModal">
+  <button id="closeCart" onclick="closeCart()">✕</button>
+  <h2>🛒 Your Cart</h2>
+  <div id="cartItems"></div>
+  <div id="cartTotal">Total: $0</div>
+  <button id="checkoutBtn" onclick="checkout()">Checkout ✨</button>
+</div>
+
+<!-- Toast -->
+<div id="cartToast"></div>
+
+<section class="login-section">
+  <div class="login-box">
+
+    <div class="robot">
+      <div class="eyes">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+      </div>
+    </div>
+
+    <h1>Create Account 🌸</h1>
+
+    <form>
+      <input type="text"     id="reg-fullname" placeholder="Full Name"       required>
+      <input type="text"     id="reg-username" placeholder="Username"         required>
+      <input type="email"    id="reg-email"    placeholder="Email Address"    required>
+      <input type="password" id="reg-password" placeholder="Password"         required>
+      <input type="password" id="reg-confirm"  placeholder="Confirm Password" required>
+
+      <!-- Password strength bar -->
+      <div id="strengthBar" style="display:none;margin:6px 0 10px;">
+        <div style="font-size:12px;color:#ddd;margin-bottom:4px;">Password strength:</div>
+        <div style="height:6px;background:rgba(255,255,255,0.2);border-radius:3px;overflow:hidden;">
+          <div id="strengthFill" style="height:100%;width:0;transition:0.3s;border-radius:3px;"></div>
+        </div>
+        <div id="strengthLabel" style="font-size:12px;margin-top:4px;"></div>
+      </div>
+
+      <button type="button" onclick="validateRegister()">Create Account 🌹</button>
+
+      <p id="reg-errorBox"   class="error-msg"></p>
+      <p id="reg-successBox" class="success-msg"></p>
+
+      <p style="color:rgba(255,255,255,0.85);margin-top:15px;font-size:14px;text-align:center;">
+        Already have an account? <a href="login.html" style="color:white;font-weight:bold;text-decoration:underline;">Login here</a>
+      </p>
+    </form>
+
+  </div>
+</section>
+
+<footer><p>Malak's Flower shop</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
